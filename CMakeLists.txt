@@ -42,6 +42,8 @@ project(Eurobusiness)
 set(SRC_LIST
     src/Eurobusiness.hpp
     src/Eurobusiness.cpp
+    src/Property.cpp
+    src/Property.hpp
 )
 
 include_directories(src)
