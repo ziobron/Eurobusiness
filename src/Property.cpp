@@ -40,7 +40,7 @@ int Railway::getPriceStamp(int rolls) const
     return 0;
 }
 
-void Railway::setState(std::shared_ptr<StateRailway> state)
+void Railway::setState(std::shared_ptr<State> state)
 {
     stateRailway_ = state;
 }
