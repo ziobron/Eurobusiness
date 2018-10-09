@@ -15,7 +15,7 @@ std::string Property::getName() const
     return name_;
 }
 
-Railway::Railway(const std::string & name) :
+Railwais::Railwais(const std::string & name) :
     Property(name),
     stateRailway_(std::make_shared<OneRailway>())
 {}
@@ -40,12 +40,16 @@ int FourRailwais::getPriceStamp() const
     return 400;
 }
 
-int Railway::getPriceStamp(int rolls) const
+int Railwais::getPriceStamp(int rolls) const
 {
     return stateRailway_->getPriceStamp();
 }
 
-void Railway::setState(std::shared_ptr<State> state)
+void Railwais::setState(std::shared_ptr<State> state)
 {
     stateRailway_ = state;
 }
+
+Railway::Railway(const std::string & name) :
+    Railwais(name)
+{}

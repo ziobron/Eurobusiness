@@ -54,11 +54,17 @@ public:
     int getPriceStamp() const override;
 };
 
-class Railway : public Property
+class Railwais : public Property
 {
     std::shared_ptr<State> stateRailway_;
 public:
-    Railway(const std::string & name);
+    Railwais(const std::string & name);
     void setState(std::shared_ptr<State> state);
     int getPriceStamp(int rolls) const override;
+};
+
+class Railway : public Railwais
+{
+public:
+    Railway(const std::string & name);
 };

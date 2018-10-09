@@ -5,9 +5,6 @@
 
 int main()
 {
-    std::shared_ptr<Property> p = std::make_shared<Railway>("railway");
-    p->setState(std::make_shared<OneRailway>());
-    std::cout << p->getPriceStamp() << std::endl;
     std::cout << "Eurobusiness!" << std::endl;
     return 0;
 }
