@@ -1,8 +1,8 @@
 #include "Property.hpp"
 
-Property::Property(const std::string & name) :
+Property::Property(const std::string & name, int purchasePrice) :
     name_(name),
-    purchasePrice_(120)
+    purchasePrice_(purchasePrice)
 {}
 
 int Property::getPurchasePrice() const
@@ -15,8 +15,8 @@ std::string Property::getName() const
     return name_;
 }
 
-Railwais::Railwais(const std::string & name) :
-    Property(name),
+Railwais::Railwais(const std::string & name, int purchasePrice) :
+    Property(name, purchasePrice),
     stateRailway_(std::make_shared<OneRailway>())
 {}
 
@@ -40,6 +40,36 @@ int FourRailwais::getPriceStamp() const
     return 400;
 }
 
+int NoBuilding::getPriceStamp() const
+{
+    return 70;
+}
+
+int OneHouse::getPriceStamp() const
+{
+    return 350;
+}
+
+int TwoHouses::getPriceStamp() const
+{
+    return 1000;
+}
+
+int ThreeHouses::getPriceStamp() const
+{
+    return 2200;
+}
+
+int FourHouses::getPriceStamp() const
+{
+    return 2600;
+}
+
+int OneHotel::getPriceStamp() const
+{
+    return 3000;
+}
+
 int Railwais::getPriceStamp(int rolls) const
 {
     return stateRailway_->getPriceStamp();
@@ -50,6 +80,21 @@ void Railwais::setState(std::shared_ptr<State> state)
     stateRailway_ = state;
 }
 
-Railway::Railway(const std::string & name) :
-    Railwais(name)
+Railway::Railway(const std::string & name, int purchasePrice) :
+    Railwais(name, purchasePrice)
 {}
+
+City::City(const std::string & name, int purchasePrice) :
+    Property(name, purchasePrice),
+    stateCity_(std::make_shared<NoBuilding>())
+{}
+
+int City::getPriceStamp(int rolls) const
+{
+    return stateCity_->getPriceStamp();
+}
+
+void City::setState(std::shared_ptr<State> state)
+{
+    stateCity_ = state;
+}
