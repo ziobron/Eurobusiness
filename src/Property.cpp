@@ -1,12 +1,12 @@
 #include "Property.hpp"
 
-Property::Property(const std::string & name, int purchasePrice) :
+Property::Property(const std::string & name) :
     name_(name),
-    purchasePrice_(purchasePrice)
+    purchasePrice_(120)
 {}
 
-Railway::Railway(const std::string & name, int purchasePrice) :
-    Property(name, purchasePrice),
+Railway::Railway(const std::string & name) :
+    Property(name),
     stateRailway_(std::make_shared<OneRailway>())
 {}
 
