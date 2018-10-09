@@ -82,8 +82,25 @@ TEST_F(CityTests, change_state_to_FourHouses_except_value_getPriceStamp_2600)
     city->setState(std::make_shared<FourHouses>());
     ASSERT_EQ(2600, city->getPriceStamp());
 }
+
 TEST_F(CityTests, change_state_to_OneHotel_except_value_getPriceStamp_3000)
 {
     city->setState(std::make_shared<OneHotel>());
     ASSERT_EQ(3000, city->getPriceStamp());
 }
+
+TEST_F(CityTests, check_if_initial_value_of_getOwner_is_pullptr)
+{
+    ASSERT_EQ(nullptr, city->getOwner());
+}
+
+TEST_F(CityTests, made_two_cities_and_set_owner_than_check_if_getOwner_are_the_same)
+{
+    std::string n = "Kevin";
+    std::shared_ptr<std::string> n1 = std::make_shared<std::string>(n);
+    std::shared_ptr<Property> city2 = std::make_shared<City>("Paris");
+    city->setOwner(n1);
+    city2->setOwner(n1);
+    ASSERT_EQ(city->getOwner(), city2->getOwner());
+}
+

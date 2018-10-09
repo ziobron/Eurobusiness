@@ -2,7 +2,8 @@
 
 Property::Property(const std::string & name, int purchasePrice) :
     name_(name),
-    purchasePrice_(purchasePrice)
+    purchasePrice_(purchasePrice),
+    owner_(nullptr)
 {}
 
 int Property::getPurchasePrice() const
@@ -13,6 +14,16 @@ int Property::getPurchasePrice() const
 std::string Property::getName() const
 {
     return name_;
+}
+
+void Property::setOwner(person owner)
+{
+    owner_ = owner;
+}
+
+person Property::getOwner() const
+{
+    return owner_;
 }
 
 Railwais::Railwais(const std::string & name, int purchasePrice) :

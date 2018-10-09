@@ -4,8 +4,11 @@
 
 class State;
 
+using person = std::shared_ptr<std::string>;
+
 class Property
 {
+    person owner_;
     std::string name_;
     int purchasePrice_;
 public:
@@ -13,6 +16,8 @@ public:
     Property(const std::string & name, int purchasePrice);
     int getPurchasePrice() const;
     std::string getName() const;
+    void setOwner(person owner);
+    person getOwner() const;
     virtual void setState(std::shared_ptr<State>) = 0;
     virtual int getPriceStamp(int rolls = 0) const = 0;
 };
