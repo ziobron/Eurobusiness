@@ -5,6 +5,16 @@ Property::Property(const std::string & name) :
     purchasePrice_(120)
 {}
 
+int Property::getPurchasePrice() const
+{
+    return purchasePrice_;
+}
+
+std::string Property::getName() const
+{
+    return name_;
+}
+
 Railway::Railway(const std::string & name) :
     Property(name),
     stateRailway_(std::make_shared<OneRailway>())
