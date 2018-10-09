@@ -124,3 +124,17 @@ public:
     int getPriceStamp(int rolls) const override;
     void setState(std::shared_ptr<State> state);
 };
+
+class Country
+{
+    std::string nameCountry_;
+    std::shared_ptr<Property> city1_;
+    std::shared_ptr<Property> city2_;
+    std::shared_ptr<Property> city3_;
+public:
+    Country(const std::string & nameCountry, std::shared_ptr<Property> c1, std::shared_ptr<Property> c2, std::shared_ptr<Property> c3); 
+    std::string getNameCountry() const;
+    std::shared_ptr<Property> getCity1() const;
+    std::shared_ptr<Property> getCity2() const;
+    std::shared_ptr<Property> getCity3() const;
+};

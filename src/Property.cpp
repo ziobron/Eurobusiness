@@ -109,3 +109,30 @@ void City::setState(std::shared_ptr<State> state)
 {
     stateCity_ = state;
 }
+
+Country::Country(const std::string & nameCountry, std::shared_ptr<Property> c1, std::shared_ptr<Property> c2, std::shared_ptr<Property> c3) :
+    nameCountry_(nameCountry),
+    city1_(c1),
+    city2_(c2),
+    city3_(c3)
+{}
+
+std::string Country::getNameCountry() const
+{
+    return nameCountry_;
+}
+
+std::shared_ptr<Property> Country::getCity1() const
+{
+    return city1_;
+}
+
+std::shared_ptr<Property> Country::getCity2() const
+{
+    return city2_;
+}
+
+std::shared_ptr<Property> Country::getCity3() const
+{
+    return city3_;
+}

@@ -11,6 +11,14 @@ struct CityTests : public ::testing::Test
     std::shared_ptr<Property> city = std::make_shared<City>("Insbruk");
 };
 
+struct CountryTests : public ::testing::Test
+{
+    std::shared_ptr<Property> city1 = std::make_shared<City>("Berlin");
+    std::shared_ptr<Property> city2 = std::make_shared<City>("Dresden");
+    std::shared_ptr<Property> city3 = std::make_shared<City>("Essen");
+    std::shared_ptr<Country> germany = std::make_shared<Country>("Germany", city1, city2, city3);
+};
+
 TEST_F(RailwayTests, check_if_inicial_value_getName_is_West_railway)
 {
     ASSERT_EQ("West railway", railway->getName());
@@ -104,3 +112,14 @@ TEST_F(CityTests, made_two_cities_and_set_owner_than_check_if_getOwner_are_the_s
     ASSERT_EQ(city->getOwner(), city2->getOwner());
 }
 
+TEST_F(CountryTests, check_if_value_of_getNameCoutry_is_Germany)
+{
+    ASSERT_EQ("Germany", germany->getNameCountry());
+}
+
+TEST_F(CountryTests, check_if_all_pointer_to_cities_are_correct)
+{
+    ASSERT_EQ(city1, germany->getCity1());
+    ASSERT_EQ(city2, germany->getCity2());
+    ASSERT_EQ(city3, germany->getCity3());
+}
