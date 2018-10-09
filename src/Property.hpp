@@ -12,8 +12,7 @@ public:
     virtual ~Property() = default;
     Property(const std::string & name, int purchasePrice);
     virtual void setState(std::shared_ptr<State>) = 0;
-    virtual int getPriceStamp() const = 0;
-    virtual int getPriceStamp(int rolls) const = 0;
+    virtual int getPriceStamp(int rolls = 0) const = 0;
 };
 
 class State
@@ -59,6 +58,5 @@ class Railway : public Property
 public:
     Railway(const std::string & name, int purchasePrice);
     void setState(std::shared_ptr<State> state);
-    int getPriceStamp() const override;
     int getPriceStamp(int rolls) const override;
 };

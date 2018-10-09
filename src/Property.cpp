@@ -6,7 +6,8 @@ Property::Property(const std::string & name, int purchasePrice) :
 {}
 
 Railway::Railway(const std::string & name, int purchasePrice) :
-    Property(name, purchasePrice)
+    Property(name, purchasePrice),
+    stateRailway_(std::make_shared<OneRailway>())
 {}
 
 int OneRailway::getPriceStamp() const
@@ -29,15 +30,9 @@ int FourRailwais::getPriceStamp() const
     return 400;
 }
 
-int Railway::getPriceStamp() const
-{
-    return stateRailway_->getPriceStamp();
-}
-
 int Railway::getPriceStamp(int rolls) const
 {
-    //throw
-    return 0;
+    return stateRailway_->getPriceStamp();
 }
 
 void Railway::setState(std::shared_ptr<State> state)
