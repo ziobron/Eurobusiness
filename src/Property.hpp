@@ -7,11 +7,11 @@ class Property
     int purchasePrice_;
 public:
     Property() = delete;
-    Property(const Property &) = default;
-    Property(Property &&) = default;
+    Property(const Property &) = delete;
+    Property(Property &&) = delete;
     ~Property() = default;
-    Property & operator=(const Property &) = default;
-    Property & operator=(Property &&) = default;
+    Property & operator=(const Property &) = delete;
+    Property & operator=(Property &&) = delete;
     explicit Property(const std::string & name);
 
     int getPurchasePrice() const;
