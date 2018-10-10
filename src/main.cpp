@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Eurobusiness.hpp"
-#include "Property.hpp"
-#include <memory> 
 
 int main()
 {
