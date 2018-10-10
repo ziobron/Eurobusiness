@@ -58,6 +58,7 @@ endif (UNIX)
 
 set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
+    test/PlayerTests.cpp
     test/test_main.cpp
 )
 
