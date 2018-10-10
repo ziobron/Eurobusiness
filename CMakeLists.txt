@@ -42,6 +42,8 @@ project(Eurobusiness)
 set(SRC_LIST
     src/Eurobusiness.hpp
     src/Eurobusiness.cpp
+    src/Board.hpp
+    src/Board.cpp
 )
 
 include_directories(src)
@@ -57,6 +59,7 @@ endif (UNIX)
 set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
     test/test_main.cpp
+    test/BoardTests.cpp
 )
 
 link_libraries(gtest)
