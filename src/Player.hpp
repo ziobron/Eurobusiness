@@ -6,7 +6,6 @@ class Player{
 
     std::string color_;
     int money_;
-    bool stillInGame_;
     int location_;
     std::vector<Property> properties_;
 
@@ -20,11 +19,15 @@ public:
 
     Player(const std::string & color);
 
-    std::string getColor();
-    int amountOfMoney();
-    bool isStillInGame();
-    int getLocation();
-    bool ownsProperty();
+    std::string getColor() const;
+    int amountOfMoney() const;
+    int getLocation() const;
+    bool ownsProperty() const;
+
+    void setLocation(const int& location);
+
+
+
 
 
 };
