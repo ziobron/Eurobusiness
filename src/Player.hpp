@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
+#include <memory>
 #include "Property.hpp"
-
 class Player{
 
     std::string color_;
@@ -25,6 +25,7 @@ public:
     bool ownsProperty() const;
 
     void setLocation(const int& location);
+    void addProperty(Property& property);
 
 
 

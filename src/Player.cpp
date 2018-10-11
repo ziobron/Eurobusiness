@@ -20,3 +20,7 @@ void Player::setLocation(const int &location)
     location_=location;
 }
 
+void Player :: addProperty(Property& property)
+{
+    properties_.push_back(property);
+}

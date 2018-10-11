@@ -1,9 +1,13 @@
 #include <gtest/gtest.h>
 #include "Player.hpp"
+#include "Property.hpp"
 
 struct PlayerTests : public ::testing::Test
 {
     Player player{"red"};
+    Property vienna{"Vienna"};
+
+
 };
 
 TEST_F(PlayerTests, check_if_player)
@@ -18,4 +22,10 @@ TEST_F(PlayerTests, check_if_location_sets_properly)
 {
     player.setLocation(12);
     ASSERT_EQ(12,player.getLocation());
+}
+
+TEST_F(PlayerTests, check_if_properties_sets_properly)
+{
+    player.addProperty(vienna);
+    ASSERT_TRUE(player.ownsProperty());
 }

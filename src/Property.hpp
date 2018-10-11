@@ -7,8 +7,8 @@ class Property
     int purchasePrice_;
 public:
     Property() = delete;
-    Property(const Property &) = delete;
-    Property(Property &&) = delete;
+    Property(const Property &) = default;
+    Property(Property &&) = default;
     ~Property() = default;
     Property & operator=(const Property &) = delete;
     Property & operator=(Property &&) = delete;
