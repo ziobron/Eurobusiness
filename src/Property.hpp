@@ -8,7 +8,7 @@ class Property
 public:
     Property() = delete;
     Property(const Property &) = default;
-    Property(Property &&) = default;
+    Property(Property &&) = delete;
     ~Property() = default;
     Property & operator=(const Property &) = delete;
     Property & operator=(Property &&) = delete;
