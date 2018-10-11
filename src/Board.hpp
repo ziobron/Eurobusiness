@@ -1,12 +1,15 @@
 #pragma once
+#include <vector>
+
+using Field = int;
 
 class Board
 {
-  private:
+private:
     int numberOfFields {40};
-    int field;
+    std::vector<Field> field;
 public:
-    Board() = default;
+    Board();
     ~Board() = default;
     Board(const Board&) = delete;
     Board(Board&&) = delete;
@@ -14,7 +17,6 @@ public:
     Board& operator=(Board&&) = delete;
 
     int getNumberOfFields() const noexcept;
-    void setField(const int& field_) noexcept;
-    int getField() const noexcept;
+    int getField(const int& numberOfField) const noexcept;
 };
 

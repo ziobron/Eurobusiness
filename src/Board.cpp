@@ -1,17 +1,17 @@
 #include "Board.hpp"
 
+
+Board::Board()
+    : field(40)
+{}
+
 int Board::getNumberOfFields() const noexcept
 {
     return numberOfFields;
 }
 
-void Board::setField(const int& field_) noexcept // in the future it will be depend on the dice
+int Board::getField(const int &numberOfField) const noexcept
 {
-    field = field_;
-}
-
-int Board::getField() const noexcept
-{
-    return field;
+    return field[numberOfField];
 }
 
