@@ -30,5 +30,5 @@ public:
     int amountOfMoney() const;
     int getLocation() const;
     void setLocation(const int location);
-    void addProperty(std::shared_ptr<Property> property);
+    void addProperty(const std::shared_ptr<Property> & property);
 };
