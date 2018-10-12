@@ -44,6 +44,8 @@ set(SRC_LIST
     src/Eurobusiness.cpp
     src/Property.cpp
     src/Property.hpp
+    src/Card.cpp
+    src/Card.hpp
 )
 
 include_directories(src)
@@ -59,6 +61,7 @@ endif (UNIX)
 set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
     test/PropertyTests.cpp
+    test/CardTests.cpp
     test/test_main.cpp
 )
 
