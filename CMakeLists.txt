@@ -42,6 +42,8 @@ project(Eurobusiness)
 set(SRC_LIST
     src/Eurobusiness.hpp
     src/Eurobusiness.cpp
+    src/Player.hpp
+    src/Player.cpp
     src/Property.cpp
     src/Property.hpp
     src/Card.cpp
@@ -60,6 +62,7 @@ endif (UNIX)
 
 set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
+    test/PlayerTests.cpp
     test/PropertyTests.cpp
     test/CardTests.cpp
     test/test_main.cpp
