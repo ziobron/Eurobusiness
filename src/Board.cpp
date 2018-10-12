@@ -1,17 +1,15 @@
 #include "Board.hpp"
-
+#include <iostream>
+#include <exception>
 
 Board::Board()
     : field(40)
 {}
 
-int Board::getNumberOfFields() const noexcept
+int Board::getField(const unsigned int numberOfField) const
 {
-    return numberOfFields;
-}
-
-int Board::getField(const int &numberOfField) const noexcept
-{
-    return field[numberOfField];
+    if(numberOfField <= 40)
+        return field[numberOfField];
+    else throw std::out_of_range("Board has only 40 fields");
 }
 
