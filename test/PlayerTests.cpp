@@ -2,12 +2,12 @@
 #include "Player.hpp"
 #include "Property.hpp"
 
-struct PlayerTests : public ::testing::Test
+struct PlayerTests : public::testing::Test
 {
     Player player{Color::Blue};
 };
 
-TEST_F(PlayerTests, check_if_player)
+TEST_F(PlayerTests, checkIfPlayerIsCreatedWithDefaultParameters)
 {
     ASSERT_EQ(Color::Blue,player.getColor());
     ASSERT_EQ(3000,player.amountOfMoney());
@@ -15,20 +15,20 @@ TEST_F(PlayerTests, check_if_player)
     ASSERT_FALSE(player.hasAnyProperty());
 }
 
-TEST_F(PlayerTests, check_if_location_sets_properly)
+TEST_F(PlayerTests, setLocationTo12ShouldMoveThePlayerToField12)
 {
     player.setLocation(12);
     ASSERT_EQ(12,player.getLocation());
 }
 
-TEST_F(PlayerTests, check_if_properties_sets_properly)
+TEST_F(PlayerTests, addingViennaShouldCauseHavingAnyProperty)
 {
     Property vienna{"Vienna"};
     player.addProperty(vienna);
     ASSERT_TRUE(player.hasAnyProperty());
 }
 
-TEST_F(PlayerTests, check_if_owns_vienna)
+TEST_F(PlayerTests, addingBerlinShouldCauseHavingBerlinNotVienna)
 {
     Property berlin{"Berlin"};
     player.addProperty(berlin);
