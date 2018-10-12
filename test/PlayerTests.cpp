@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "Player.hpp"
-#include "Property.hpp"
+
 
 struct PlayerTests : public::testing::Test
 {
@@ -23,14 +23,14 @@ TEST_F(PlayerTests, setLocationTo12ShouldMoveThePlayerToField12)
 
 TEST_F(PlayerTests, addingViennaShouldCauseHavingAnyProperty)
 {
-    Property vienna{"Vienna"};
+    auto vienna=std::make_shared<Property>("Vienna");
     player.addProperty(vienna);
     ASSERT_TRUE(player.hasAnyProperty());
 }
 
 TEST_F(PlayerTests, addingBerlinShouldCauseHavingBerlinNotVienna)
 {
-    Property berlin{"Berlin"};
+    auto berlin=std::make_shared<Property>("Berlin");
     player.addProperty(berlin);
     ASSERT_FALSE(player.ownsProperty("Vienna"));
     ASSERT_TRUE(player.ownsProperty("Berlin"));

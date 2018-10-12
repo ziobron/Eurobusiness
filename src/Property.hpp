@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 
 class Property
 {
@@ -9,7 +10,7 @@ class Property
     int purchasePrice_;
 public:
     Property() = delete;
-    Property(const Property &) = default;
+    Property(const Property &) = delete;
     Property(Property &&) = delete;
     ~Property() = default;
     Property & operator=(const Property &) = delete;
@@ -20,4 +21,4 @@ public:
     std::string getName() const;
 };
 
-using Properties = std::vector<Property>;
+using PropertiesPtr = std::vector<std::shared_ptr<Property>>;

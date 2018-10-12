@@ -14,7 +14,7 @@ class Player{
     Color color_;
     int money_;
     int location_;
-    Properties properties_;
+    PropertiesPtr properties_;
 
 public:
     Player()= delete;
@@ -32,5 +32,5 @@ public:
     bool hasAnyProperty() const;
     bool ownsProperty(std::string propertyName) const;
     void setLocation(const int location);
-    void addProperty(Property& property);
+    void addProperty(std::shared_ptr<Property> property);
 };
