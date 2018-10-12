@@ -1,5 +1,8 @@
 #pragma once
+
 #include <string>
+#include <vector>
+#include <memory>
 
 class Property
 {
@@ -17,3 +20,5 @@ public:
     int getPurchasePrice() const;
     std::string getName() const;
 };
+
+using PropertiesPtr = std::vector<std::shared_ptr<Property>>;
