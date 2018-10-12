@@ -29,8 +29,6 @@ public:
     Color getColor() const;
     int amountOfMoney() const;
     int getLocation() const;
-    bool hasAnyProperty() const;
-    bool ownsProperty(std::string propertyName) const;
     void setLocation(const int location);
     void addProperty(std::shared_ptr<Property> property);
 };
