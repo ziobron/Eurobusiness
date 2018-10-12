@@ -17,13 +17,7 @@ void Player::setLocation(const int location)
     location_ = location;
 }
 
-void Player::addProperty(std::shared_ptr<Property> property)
+void Player::addProperty(const std::shared_ptr<Property> & property)
 {
     properties_.push_back(property);
-}
-
-bool Player::ownsProperty(std::string propertyName) const
-{
-    return std::any_of(std::begin(properties_),std::end(properties_),
-            [&propertyName](const std::shared_ptr<Property>& p){return p->getName()==propertyName;});
 }
