@@ -29,7 +29,7 @@ public:
     Color getColor() const;
     int amountOfMoney() const;
     int getLocation() const;
-    bool ownsProperty() const;
+    bool hasAnyProperty() const;
     void setLocation(const int location);
     void addProperty(Property& property);
 };

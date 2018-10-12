@@ -9,11 +9,7 @@ Player::Player(Color c)
 Color Player::getColor() const {return color_;}
 int Player::amountOfMoney() const {return money_;}
 int Player::getLocation() const { return location_;}
-bool Player::ownsProperty() const
-{
-    if(properties_.empty()) return false;
-    else return true;
-}
+bool Player::hasAnyProperty() const {return not properties_.empty();}
 
 void Player::setLocation(const int location)
 {

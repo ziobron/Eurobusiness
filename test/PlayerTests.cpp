@@ -16,7 +16,7 @@ TEST_F(PlayerTests, check_if_player)
     ASSERT_EQ(Color::Blue,player.getColor());
     ASSERT_EQ(3000,player.amountOfMoney());
     ASSERT_EQ(0,player.getLocation());
-    ASSERT_FALSE(player.ownsProperty());
+    ASSERT_FALSE(player.hasAnyProperty());
 }
 
 TEST_F(PlayerTests, check_if_location_sets_properly)
@@ -28,5 +28,5 @@ TEST_F(PlayerTests, check_if_location_sets_properly)
 TEST_F(PlayerTests, check_if_properties_sets_properly)
 {
     player.addProperty(vienna);
-    ASSERT_TRUE(player.ownsProperty());
+    ASSERT_TRUE(player.hasAnyProperty());
 }
