@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include <algorithm>
 
 Player::Player(Color c)
         : color_(c),
@@ -19,4 +20,10 @@ void Player::setLocation(const int location)
 void Player::addProperty(Property& property)
 {
     properties_.push_back(property);
+}
+
+bool Player::ownsProperty(std::string propertyName) const
+{
+    return std::any_of(std::begin(properties_),std::end(properties_),
+            [&propertyName](const Property& p){return p.getName()==propertyName;});
 }

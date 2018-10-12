@@ -2,13 +2,9 @@
 #include "Player.hpp"
 #include "Property.hpp"
 
-
-
 struct PlayerTests : public ::testing::Test
 {
     Player player{Color::Blue};
-    Property vienna{"Vienna"};
-
 };
 
 TEST_F(PlayerTests, check_if_player)
@@ -27,6 +23,15 @@ TEST_F(PlayerTests, check_if_location_sets_properly)
 
 TEST_F(PlayerTests, check_if_properties_sets_properly)
 {
+    Property vienna{"Vienna"};
     player.addProperty(vienna);
     ASSERT_TRUE(player.hasAnyProperty());
+}
+
+TEST_F(PlayerTests, check_if_owns_vienna)
+{
+    Property berlin{"Berlin"};
+    player.addProperty(berlin);
+    ASSERT_FALSE(player.ownsProperty("Vienna"));
+    ASSERT_TRUE(player.ownsProperty("Berlin"));
 }
