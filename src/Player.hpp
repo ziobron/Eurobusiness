@@ -1,13 +1,20 @@
+#pragma once
+
 #include <string>
-#include <vector>
-#include <memory>
 #include "Property.hpp"
+
+enum class Color: unsigned char{
+    Red,
+    Green,
+    Blue
+};
+
 class Player{
 
-    std::string color_;
+    Color color_;
     int money_;
     int location_;
-    std::vector<Property> properties_;
+    Properties properties_;
 
 public:
     Player()= delete;
@@ -17,18 +24,12 @@ public:
     Player & operator=(const Player &) = delete;
     Player & operator=(Player &&) = delete;
 
-    Player(const std::string & color);
+    Player(Color c);
 
-    std::string getColor() const;
+    Color getColor() const;
     int amountOfMoney() const;
     int getLocation() const;
     bool ownsProperty() const;
-
-    void setLocation(const int& location);
+    void setLocation(const int location);
     void addProperty(Property& property);
-
-
-
-
-
 };

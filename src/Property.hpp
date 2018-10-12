@@ -1,5 +1,7 @@
 #pragma once
+
 #include <string>
+#include <vector>
 
 class Property
 {
@@ -17,3 +19,5 @@ public:
     int getPurchasePrice() const;
     std::string getName() const;
 };
+
+using Properties = std::vector<Property>;
