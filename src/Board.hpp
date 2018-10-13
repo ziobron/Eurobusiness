@@ -15,6 +15,6 @@ public:
     Board& operator=(const Board&) = delete;
     Board& operator=(Board&&) = delete;
 
-    int getField(const unsigned int numberOfField) const;
+    int getField(const unsigned int numberOfField) const noexcept;
 };
 
