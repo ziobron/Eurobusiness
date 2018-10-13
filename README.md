@@ -1,6 +1,7 @@
 # Eurobusiness
 [![Build Status](https://www.travis-ci.org/LordLukin/Eurobusiness.svg?branch=master)](https://travis-ci.org/LordLukin/Eurobusiness.svg?branch=master) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/56d03d8bdb924fb7af54f6ee2134063d)](https://www.codacy.com/app/LordLukin/Eurobusiness?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LordLukin/Eurobusiness&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/LordLukin/Eurobusiness/branch/master/graph/badge.svg)](https://codecov.io/gh/LordLukin/Eurobusiness)
 
 Eurobusiness (Monopoly)
 =====================
