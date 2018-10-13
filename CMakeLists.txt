@@ -46,6 +46,8 @@ set(SRC_LIST
     src/Board.cpp
     src/Property.cpp
     src/Property.hpp
+    src/Dice.hpp
+    src/Dice.cpp  
 )
 
 include_directories(src)
@@ -63,6 +65,7 @@ set(TEST_SRC_LIST
     test/PropertyTests.cpp
     test/test_main.cpp
     test/BoardTests.cpp
+    test/DiceTests.cpp
 )
 
 link_libraries(gtest)
