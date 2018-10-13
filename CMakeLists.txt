@@ -37,6 +37,9 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_CXX_FLAGS "-g -O0 -Wall --coverage")
+set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+
 project(Eurobusiness)
 
 set(SRC_LIST
@@ -44,6 +47,8 @@ set(SRC_LIST
     src/Eurobusiness.cpp
     src/Board.hpp
     src/Board.cpp
+    src/Player.hpp
+    src/Player.cpp
     src/Property.cpp
     src/Property.hpp
     src/Dice.hpp
@@ -62,6 +67,7 @@ endif (UNIX)
 
 set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
+    test/PlayerTests.cpp
     test/PropertyTests.cpp
     test/test_main.cpp
     test/BoardTests.cpp
