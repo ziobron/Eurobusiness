@@ -45,6 +45,8 @@ project(Eurobusiness)
 set(SRC_LIST
     src/Eurobusiness.hpp
     src/Eurobusiness.cpp
+    src/Board.hpp
+    src/Board.cpp
     src/Player.hpp
     src/Player.cpp
     src/Property.cpp
@@ -66,6 +68,7 @@ set(TEST_SRC_LIST
     test/PlayerTests.cpp
     test/PropertyTests.cpp
     test/test_main.cpp
+    test/BoardTests.cpp
 )
 
 link_libraries(gtest)
