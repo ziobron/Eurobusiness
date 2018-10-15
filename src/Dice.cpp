@@ -1,21 +1,16 @@
 #include "Dice.hpp"
-#include <random>
+#include <iostream>
+#include <ctime>
 
-void Dice::throwDice() noexcept
+Dice::Dice()
 {
-    std::random_device rd;
-    std::default_random_engine e(rd());
-    std::uniform_int_distribution<int> uniform_dist(1, 6);
-    value = uniform_dist(e);
+   srand(time(nullptr));
 }
 
-int Dice::getValue() const noexcept
+int Dice::throwIt() noexcept
 {
-    return value;
+    return rand() % 13 + 1;
 }
 
-int Dice::operator+(const Dice& secondDice)
-{
-    return value + secondDice.value;
-}
+
 
