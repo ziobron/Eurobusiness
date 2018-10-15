@@ -51,13 +51,14 @@ set(SRC_LIST
     src/Player.cpp
     src/Property.cpp
     src/Property.hpp
-    src/Card.cpp
-    src/Card.hpp
+    src/Cards.cpp
+    src/Cards.hpp
 )
 
 include_directories(src)
 add_library(${PROJECT_NAME}-lib ${SRC_LIST})
 add_executable(${PROJECT_NAME} src/main.cpp)
+include_directories(json)
 
 if (UNIX)
     target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib pthread)
@@ -69,7 +70,7 @@ set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
     test/PlayerTests.cpp
     test/PropertyTests.cpp
-    test/CardTests.cpp
+    test/CardsTests.cpp
     test/test_main.cpp
     test/BoardTests.cpp
 )
