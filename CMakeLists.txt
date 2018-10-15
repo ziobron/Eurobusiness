@@ -37,11 +37,16 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_CXX_FLAGS "-g -O0 -Wall --coverage")
+set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+
 project(Eurobusiness)
 
 set(SRC_LIST
     src/Eurobusiness.hpp
     src/Eurobusiness.cpp
+    src/Board.hpp
+    src/Board.cpp
     src/Player.hpp
     src/Player.cpp
     src/Property.cpp
@@ -66,6 +71,7 @@ set(TEST_SRC_LIST
     test/PropertyTests.cpp
     test/CardTests.cpp
     test/test_main.cpp
+    test/BoardTests.cpp
 )
 
 link_libraries(gtest)
