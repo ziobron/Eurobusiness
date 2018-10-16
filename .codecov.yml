@@ -19,3 +19,4 @@ coverage:
         
 ignore:
   - "test"       # wildcards accepted
+  - "json"
