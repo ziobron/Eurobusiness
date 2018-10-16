@@ -9,5 +9,5 @@ struct DiceTest : public ::testing::Test
 TEST_F(DiceTest, check_if_throwIt_returns_number_from_the_range_from_1_to_12)
 {
     int throw_ = dice.throwIt();
-    ASSERT_EQ(throw_ <= 12 && throw_ >= 1, true);
+    ASSERT_TRUE(throw_ <= 12 && throw_ >= 1);
 }

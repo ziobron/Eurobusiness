@@ -3,7 +3,7 @@
 class Dice
 {
 public:
-    Dice();
+    Dice() = default;
     ~Dice() = default;
     Dice(const Dice&) = delete;
     Dice(Dice&&) = delete;
