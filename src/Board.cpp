@@ -6,7 +6,6 @@ Board::Board()
 
 int Board::getField(const unsigned int numberOfField) const noexcept
 {
-    if(numberOfField < 40)
-        return field[numberOfField];
+    return field.at(numberOfField);
 }
 

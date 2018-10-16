@@ -5,7 +5,6 @@
 struct CardsTests : public ::testing::Test
 {
     json dataJson = R"({
-                "red" : {
                     "0" : "Zobowiązany jesteś zmodernizować swoje miasto, płacisz za każdy dom 80 $,za każdy hotel 230 $",
                     "1" : "Remontujesz swoje domy. Płacisz do banku za każdy dom 50 $, za każdy hotel 200 $.",
                     "2" : "Wracasz do Madrytu.",
@@ -22,9 +21,8 @@ struct CardsTests : public ::testing::Test
                     "13": "Idziesz do Kolei Wschodnich. Jeżeli przechodzisz przez start otrzymujesz 400 $.",
                     "14": "Bank wpłaca Ci należne odsetki w wysokości 300 $.",
                     "15": "Wychodzisz wolny z więzienia. Kartę należy zachować do wykorzystania lub sprzedania."
-                    }
                 })"_json;
-    Cards redCards{dataJson};
+    Cards redCards{"red", dataJson};
 };
 
 TEST_F(CardsTests, check_if_color_of_reCards_is_red)

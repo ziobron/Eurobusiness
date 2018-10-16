@@ -16,7 +16,7 @@ public:
     Cards & operator=(const Cards &) = delete;
     Cards & operator=(Cards &&) = delete;
     ~Cards() = default;
-    Cards(json dataPacked);
+    Cards(const std::string & color, json dataPacked);
 
     oneCard getOneCard(const int number) const;
     std::string getColor() const;

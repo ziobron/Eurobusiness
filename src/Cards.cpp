@@ -1,9 +1,9 @@
 #include "Cards.hpp"
 
-Cards::Cards(json dataPacked) :
-    color_(dataPacked.begin().key())
+Cards::Cards(const std::string & color, json dataPacked) :
+    color_(color)
 {
-    for (json::iterator it = dataPacked.at(color_).begin(); it != dataPacked.at(color_).end(); it++)
+    for (auto it = dataPacked.begin(); it != dataPacked.end(); it++)
         collectionCards_.at(stoi(it.key())) = it.value();
 }
     
