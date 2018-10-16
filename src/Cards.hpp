@@ -5,9 +5,15 @@
 using json = nlohmann::json;
 using oneCard = std::string;
 
+enum class CardsColor
+{
+    red,
+    blue
+};
+
 class Cards
 {
-    std::string color_;
+    CardsColor color_;
     std::array<oneCard, 16> collectionCards_;
 public:
     Cards() = delete;
@@ -16,8 +22,8 @@ public:
     Cards & operator=(const Cards &) = delete;
     Cards & operator=(Cards &&) = delete;
     ~Cards() = default;
-    Cards(const std::string & color, json dataPacked);
+    Cards(CardsColor color, json dataPacked);
 
     oneCard getOneCard(const int number) const;
-    std::string getColor() const;
+    CardsColor getColor() const;
 };
