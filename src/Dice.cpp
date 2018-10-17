@@ -1,15 +1,14 @@
 #include "Dice.hpp"
-#include <iostream>
-#include <ctime>
-#include <random>
-#include <functional>
+
+Dice::Dice()
+    : device()
+    , generator(device())
+    , distribuation(1,12)
+{}
 
 int Dice::throwIt() noexcept
 {
-    std::mt19937 engine(time(nullptr));
-    std::uniform_int_distribution<int> distribuation(1, 12);
-    auto random = std::bind(distribuation, engine);
-    return random();
+   return distribuation(generator);
 }
 
 
