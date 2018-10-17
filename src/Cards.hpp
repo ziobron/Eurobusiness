@@ -7,8 +7,8 @@ using oneCard = std::string;
 
 enum class CardsColor
 {
-    red,
-    blue
+    RED,
+    BLUE
 };
 
 class Cards
