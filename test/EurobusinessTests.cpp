@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include "../src/Eurobusiness.hpp"
-#include "../json/json.hpp"
+#include "Eurobusiness.hpp"
+#include "json.hpp"
 
 struct EurobusinessTests : public ::testing::Test
 {
