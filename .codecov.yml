@@ -16,3 +16,6 @@ coverage:
     patch:
       default:
         enabled: no
+        
+ignore:
+  - "test"       # wildcards accepted
