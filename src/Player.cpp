@@ -36,3 +36,8 @@ void Player::reduceMoney(int price)
 {
     money_ -= price;
 }
+
+void Player::addMoney(int price)
+{
+    money_ += price;
+}

@@ -19,8 +19,11 @@ std::string Property::getName() const
 
 void Property::doOn(std::shared_ptr<Player> player)
 {
-
-    player->reduceMoney(12);
+    if (player != owner_) 
+    {
+        player->reduceMoney(12);
+        owner_->addMoney(12);
+    }
 }
 
 std::shared_ptr<Player> Property::getOwner() const

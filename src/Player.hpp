@@ -32,6 +32,7 @@ public:
     Color getColor() const;
     int getMoney() const;
     void reduceMoney(int price);
+    void addMoney(int price);
     int getLocation() const;
     void setLocation(const int location);
     void addProperty(const std::shared_ptr<Property> & property);
