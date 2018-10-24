@@ -10,7 +10,7 @@ struct PlayerTests : public::testing::Test
 TEST_F(PlayerTests, checkIfPlayerIsCreatedWithDefaultParameters)
 {
     ASSERT_EQ(Color::Blue,player.getColor());
-    ASSERT_EQ(3000,player.amountOfMoney());
+    ASSERT_EQ(3000,player.getMoney());
     ASSERT_EQ(0,player.getLocation());
 }
 

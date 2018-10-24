@@ -1,4 +1,5 @@
 #include "Property.hpp"
+#include <iostream>
 
 Property::Property(const std::string & name) :
     name_(name),
@@ -13,4 +14,9 @@ int Property::getPurchasePrice() const
 std::string Property::getName() const
 {
     return name_;
+}
+
+void Property::doOn(std::shared_ptr<Player> player)
+{
+    player->reduceMoney(12);
 }

@@ -21,7 +21,7 @@ public:
 
     int getPurchasePrice() const;
     std::string getName() const;
-    void doSomtingOn(std::shared_ptr<Player> player) {}
+    void doOn(std::shared_ptr<Player> player);
 };
 
 using PropertiesPtr = std::vector<std::shared_ptr<Property>>;

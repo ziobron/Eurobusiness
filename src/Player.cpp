@@ -12,7 +12,7 @@ Color Player::getColor() const
     return color_;
 }
 
-int Player::amountOfMoney() const
+int Player::getMoney() const
 {
     return money_;
 }
@@ -30,4 +30,9 @@ void Player::setLocation(const int location)
 void Player::addProperty(const std::shared_ptr<Property> & property)
 {
     properties_.push_back(property);
+}
+
+void Player::reduceMoney(int price)
+{
+    money_ -= price;
 }

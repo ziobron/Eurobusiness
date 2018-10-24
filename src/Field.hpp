@@ -7,5 +7,5 @@ class Field
 {
 public:
     virtual ~Field() = default;
-    virtual void doSomtingOn(std::shared_ptr<Player> player) = 0;
+    virtual void doOn(std::shared_ptr<Player> player) = 0;
 };
