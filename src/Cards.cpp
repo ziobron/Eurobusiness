@@ -16,3 +16,8 @@ oneCard Cards::getOneCard(const int number) const
 {
     return collectionCards_.at(number);
 }
+
+void Cards::doOn(std::shared_ptr<Player> player)
+{
+
+}

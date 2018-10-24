@@ -1,6 +1,7 @@
 #pragma once
 #include <json.hpp>
 #include <array>
+#include "Field.hpp"
 
 using json = nlohmann::json;
 using oneCard = std::string;
@@ -11,7 +12,7 @@ enum class CardsColor
     BLUE
 };
 
-class Cards
+class Cards : public Field
 {
     CardsColor color_;
     std::array<oneCard, 16> collectionCards_;
@@ -26,4 +27,5 @@ public:
 
     oneCard getOneCard(const int number) const;
     CardsColor getColor() const;
+    void doOn(std::shared_ptr<Player> player) override;
 };
