@@ -3,6 +3,9 @@
 #include <string>
 #include "Property.hpp"
 
+class Property;
+using PropertiesPtr = std::vector<std::shared_ptr<Property>>;
+
 enum class Color: unsigned char{
     Red,
     Green,

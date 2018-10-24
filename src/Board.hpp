@@ -1,12 +1,14 @@
 #pragma once
 #include <vector>
+#include "Field.hpp"
+#include <memory>
 
-using Field = int;
+using Fiield = std::shared_ptr<Field>;
 
 class Board
 {
 private:
-    std::vector<Field> field;
+    std::vector<Fiield> field;
 public:
     Board();
     ~Board() = default;
@@ -15,6 +17,6 @@ public:
     Board& operator=(const Board&) = delete;
     Board& operator=(Board&&) = delete;
 
-    int getField(const unsigned int numberOfField) const noexcept;
+    Fiield getField(const unsigned int numberOfField) const noexcept;
 };
 

@@ -55,6 +55,7 @@ set(SRC_LIST
     src/Cards.hpp
     src/Dice.hpp
     src/Dice.cpp
+    src/Field.hpp
 )
 
 include_directories(src)

@@ -3,8 +3,10 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include "Field.hpp"
+#include "Player.hpp"
 
-class Property
+class Property : public Field
 {
     std::string name_;
     int purchasePrice_;
@@ -19,6 +21,7 @@ public:
 
     int getPurchasePrice() const;
     std::string getName() const;
+    void doSomtingOn(std::shared_ptr<Player> player) {}
 };
 
 using PropertiesPtr = std::vector<std::shared_ptr<Property>>;

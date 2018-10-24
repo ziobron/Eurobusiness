@@ -4,7 +4,7 @@ Board::Board()
     : field(40)
 {}
 
-int Board::getField(const unsigned int numberOfField) const noexcept
+Fiield Board::getField(const unsigned int numberOfField) const noexcept
 {
     return field.at(numberOfField);
 }
