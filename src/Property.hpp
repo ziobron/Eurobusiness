@@ -10,6 +10,7 @@ class Property : public Field
 {
     std::string name_;
     int purchasePrice_;
+    std::shared_ptr<Player> owner_;
 public:
     Property() = delete;
     Property(const Property &) = delete;
@@ -22,6 +23,8 @@ public:
     int getPurchasePrice() const;
     std::string getName() const;
     void doOn(std::shared_ptr<Player> player);
+    std::shared_ptr<Player> getOwner() const;
+    void setOwner(std::shared_ptr<Player> player);
 };
 
 using PropertiesPtr = std::vector<std::shared_ptr<Property>>;
