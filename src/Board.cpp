@@ -2,6 +2,7 @@
 #include "Property.hpp"
 #include "Cards.hpp"
 #include "Railway.hpp"
+#include "OrdinaryCard.hpp"
 #include <string>
 
 Board::Board()
@@ -36,8 +37,7 @@ FieldPtr Board::factoryFields(const std::string & name)
             if (pos != std::string::npos)
                 return std::make_shared<Railway>(name.substr(pos + 8));
         }
-
     }
-    return nullptr;
+    return std::make_shared<OrdinaryCard>(name);
 }
 

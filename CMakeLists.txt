@@ -58,6 +58,7 @@ set(SRC_LIST
     src/Field.hpp
     src/Field.cpp
     src/OrdinaryCard.hpp
+    src/OrdinaryCard.cpp
     src/Railway.hpp
     src/Railway.cpp
 )

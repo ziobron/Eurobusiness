@@ -1,14 +1,9 @@
 #include "OrdinaryCard.hpp"
 
-OrdinaryCard::OrdinaryCard(const sttd:string name) :
-    name_(name)
+OrdinaryCard::OrdinaryCard(const std::string & name) :
+    Field(name)
 {}
 
-void OrdinaryCard::doOn(Player player)
+void OrdinaryCard::doOn(PlayerPtr player)
 {
-}
-
-std::string getName() const
-{
-    return name_;
 }

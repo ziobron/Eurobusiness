@@ -15,12 +15,18 @@ TEST_F(BoardTest, check_if_factoryFields_made_Property_Madrit)
 
 TEST_F(BoardTest, check_if_factoryFields_made_Card_Blue)
 {
-    std::shared_ptr<Field> madrit = board.factoryFields("Szansa (czerwona)");
-    ASSERT_EQ("czerwona)", madrit->getName());
+    std::shared_ptr<Field> card = board.factoryFields("Szansa (czerwona)");
+    ASSERT_EQ("czerwona)", card->getName());
 }
 
 TEST_F(BoardTest, check_if_factoryFields_made_Railway_West)
 {
-    std::shared_ptr<Field> madrit = board.factoryFields("Koleje wschodnie");
-    ASSERT_EQ("Railway", madrit->getName());
+    std::shared_ptr<Field> railway = board.factoryFields("Koleje wschodnie");
+    ASSERT_EQ("Railway", railway->getName());
+}
+
+TEST_F(BoardTest, check_if_factoryFields_made_OrdynaryCard)
+{
+    std::shared_ptr<Field> ordinaryCard = board.factoryFields("Start");
+    ASSERT_EQ("Start", ordinaryCard->getName());
 }
