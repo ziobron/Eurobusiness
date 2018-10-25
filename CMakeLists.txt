@@ -56,6 +56,7 @@ set(SRC_LIST
     src/Dice.hpp
     src/Dice.cpp
     src/Field.hpp
+    src/Field.cpp
     src/OrdinaryCard.hpp
 )
 

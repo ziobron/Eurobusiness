@@ -29,5 +29,4 @@ public:
     oneCard getOneCard(const int number) const;
     CardsColor getColor() const;
     void doOn(std::shared_ptr<Player> player) override;
-    std::string getName() const override;
 };

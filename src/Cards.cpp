@@ -8,6 +8,7 @@ Cards::Cards(CardsColor color, json dataPacked) :
 }
 
 Cards::Cards(CardsColor color, const std::string & name) :
+    Field(name),
     color_(color)
 {
     collectionCards_.at(0) = name;
@@ -28,7 +29,3 @@ void Cards::doOn(std::shared_ptr<Player> player)
 
 }
 
-std::string Cards::getName() const
-{
-    return collectionCards_.at(0);
-}
