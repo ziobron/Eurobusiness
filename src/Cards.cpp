@@ -1,6 +1,7 @@
 #include "Cards.hpp"
 
 Cards::Cards(CardsColor color, json dataPacked) :
+    Field("Cards"),
     color_(color)
 {
     for (auto it = dataPacked.begin(); it != dataPacked.end(); it++)

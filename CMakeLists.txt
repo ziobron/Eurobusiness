@@ -58,6 +58,8 @@ set(SRC_LIST
     src/Field.hpp
     src/Field.cpp
     src/OrdinaryCard.hpp
+    src/Railway.hpp
+    src/Railway.cpp
 )
 
 include_directories(src)
@@ -79,6 +81,7 @@ set(TEST_SRC_LIST
     test/test_main.cpp
     test/BoardTests.cpp
     test/DiceTests.cpp
+    test/RailwayTests.cpp
 )
 
 link_libraries(gtest)
