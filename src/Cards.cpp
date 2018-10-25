@@ -21,3 +21,8 @@ void Cards::doOn(std::shared_ptr<Player> player)
 {
 
 }
+
+std::string Cards::getName() const
+{
+    return "Card";
+}

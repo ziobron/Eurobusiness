@@ -21,7 +21,7 @@ public:
     explicit Property(const std::string & name);
 
     int getPurchasePrice() const;
-    std::string getName() const;
+    std::string getName() const override;
     void doOn(std::shared_ptr<Player> player);
     std::shared_ptr<Player> getOwner() const;
     void setOwner(std::shared_ptr<Player> player);
