@@ -7,9 +7,14 @@ struct BoardTest : public ::testing::Test
     Board board;
 };
 
-TEST_F(BoardTest, check_if_factoryFields_made_property_Madrit)
+TEST_F(BoardTest, check_if_factoryFields_made_Property_Madrit)
 {
-    std::shared_ptr<Field> madrit = board.factoryFields("Espania - Mardit");
+    std::shared_ptr<Field> madrit = board.factoryFields("Espania - Madrit");
     ASSERT_EQ("Madrit", madrit->getName());
 }
 
+TEST_F(BoardTest, check_if_factoryFields_made_Card_Blue)
+{
+    std::shared_ptr<Field> madrit = board.factoryFields("Szansa (czerwona)");
+    ASSERT_EQ("czerwona)", madrit->getName());
+}

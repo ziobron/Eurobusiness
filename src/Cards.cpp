@@ -6,6 +6,12 @@ Cards::Cards(CardsColor color, json dataPacked) :
     for (auto it = dataPacked.begin(); it != dataPacked.end(); it++)
         collectionCards_.at(stoi(it.key())) = it.value();
 }
+
+Cards::Cards(CardsColor color, const std::string & name) :
+    color_(color)
+{
+    collectionCards_.at(0) = name;
+}
     
 CardsColor Cards::getColor() const
 {
@@ -24,5 +30,5 @@ void Cards::doOn(std::shared_ptr<Player> player)
 
 std::string Cards::getName() const
 {
-    return "Card";
+    return collectionCards_.at(0);
 }
