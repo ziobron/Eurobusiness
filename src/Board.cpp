@@ -1,6 +1,7 @@
 #include "Board.hpp"
 #include "Property.hpp"
 #include "Cards.hpp"
+#include "Railway.hpp"
 #include <string>
 
 Board::Board()
@@ -23,13 +24,19 @@ FieldPtr Board::factoryFields(const std::string & name)
 {
     auto pos = name.find("-");
     if (pos != std::string::npos)
-    {
         return std::make_shared<Property>(name.substr(pos + 2));
-    } else 
+    else 
     {
         pos = name.find("Szansa");
         if (pos != std::string::npos)
             return std::make_shared<Cards>(CardsColor::RED, name.substr(pos + 8));
+        else
+        {
+            pos = name.find("Koleje");
+            if (pos != std::string::npos)
+                return std::make_shared<Railway>(name.substr(pos + 8));
+        }
+
     }
     return nullptr;
 }

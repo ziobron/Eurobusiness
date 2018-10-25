@@ -18,3 +18,9 @@ TEST_F(BoardTest, check_if_factoryFields_made_Card_Blue)
     std::shared_ptr<Field> madrit = board.factoryFields("Szansa (czerwona)");
     ASSERT_EQ("czerwona)", madrit->getName());
 }
+
+TEST_F(BoardTest, check_if_factoryFields_made_Railway_West)
+{
+    std::shared_ptr<Field> madrit = board.factoryFields("Koleje wschodnie");
+    ASSERT_EQ("Railway", madrit->getName());
+}
