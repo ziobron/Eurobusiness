@@ -13,5 +13,5 @@ public:
     Field(const std::string & name);
     virtual ~Field() = default;
     virtual void doOn(PlayerPtr player) = 0;
-    virtual std::string getName() const;
+    std::string getName() const;
 };
