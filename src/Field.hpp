@@ -3,11 +3,12 @@
 #include <string>
 
 class Player;
+using PlayerPtr = std::shared_ptr<Player>;
 
 class Field
 {
 public:
     virtual ~Field() = default;
-    virtual void doOn(std::shared_ptr<Player> player) = 0;
+    virtual void doOn(PlayerPtr player) = 0;
     virtual std::string getName() const = 0;
 };
