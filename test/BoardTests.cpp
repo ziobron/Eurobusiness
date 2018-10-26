@@ -36,3 +36,11 @@ TEST_F(BoardTest, check_if_method_readFile_return_json_file)
     json j = board.readFile("../files/configData.json");
     ASSERT_EQ("Start", j["fields"]["0"]);
 }
+
+TEST_F(BoardTest, check_method_setCards_if_correct_set_blue_and_red_cards)
+{
+    json j = board.readFile("../files/configData.json");
+    board.setCards(j);
+    ASSERT_EQ("Zobowiązany jesteś zmodernizować swoje miasto, płacisz za każdy dom 80 $,za każdy hotel 230 $", board.getRedCard());
+    ASSERT_EQ("Płacisz na budowę szpitala 400 $.", board.getBlueCard());
+}

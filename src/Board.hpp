@@ -2,7 +2,7 @@
 #include <vector>
 #include "Field.hpp"
 #include "Cards.hpp"
-#include "Cards.hpp"
+#include "Property.hpp"
 #include <memory>
 #include <json.hpp>
 
@@ -13,8 +13,9 @@ class Board
 {
 private:
     std::vector<FieldPtr> field_;
-    std::shared_ptr<Cards> redCards;   
-    std::shared_ptr<Cards> blueCards;   
+    std::shared_ptr<Cards> redCards_;   
+    std::shared_ptr<Cards> blueCards_;   
+    std::shared_ptr<Property> property_;   
 public:
     Board();
     Board(json dataPacked);
@@ -25,7 +26,10 @@ public:
     Board& operator=(Board&&) = delete;
 
     json readFile(const std::string & fileName);
+    void setCards(json dataPacked);
     FieldPtr getField(const unsigned int numberOfField) const noexcept;
     FieldPtr factoryFields(const std::string & name);
+    oneCard getRedCard();
+    oneCard getBlueCard();
 };
 

@@ -53,3 +53,19 @@ json Board::readFile(const std::string & fileName)
     }
     return j;
 }
+
+void Board::setCards(json dataPacked)
+{
+    redCards_ = std::make_shared<Cards>(CardsColor::RED, dataPacked["cards"]["red"]);
+    blueCards_ = std::make_shared<Cards>(CardsColor::BLUE, dataPacked["cards"]["blue"]);
+}
+
+oneCard Board::getRedCard()
+{
+    return redCards_->getOneCard(0);
+}
+
+oneCard Board::getBlueCard()
+{
+    return blueCards_->getOneCard(0);
+}
