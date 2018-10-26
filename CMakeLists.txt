@@ -65,6 +65,8 @@ set(SRC_LIST
     src/WaterSupplyNetwork.hpp
     src/City.cpp
     src/City.hpp
+    src/State.hpp
+    src/StateCity.hpp
 )
 
 include_directories(src)

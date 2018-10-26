@@ -5,11 +5,13 @@
 #include <memory>
 #include "Field.hpp"
 #include "Player.hpp"
+#include "State.hpp"
 
 class Property : public Field
 {
     int purchasePrice_;
     std::shared_ptr<Player> owner_;
+    std::shared_ptr<State> state_;
 public:
     Property() = delete;
     Property(const Property &) = delete;
