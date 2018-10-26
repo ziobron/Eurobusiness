@@ -61,6 +61,8 @@ set(SRC_LIST
     src/OrdinaryCard.cpp
     src/Railway.hpp
     src/Railway.cpp
+    src/WaterSupplyNetwork.cpp
+    src/WaterSupplyNetwork.hpp
 )
 
 include_directories(src)
@@ -83,6 +85,7 @@ set(TEST_SRC_LIST
     test/BoardTests.cpp
     test/DiceTests.cpp
     test/RailwayTests.cpp
+    test/WaterSupplyNetworkTests.cpp
 )
 
 link_libraries(gtest)

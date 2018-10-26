@@ -78,15 +78,11 @@ void Board::setFieldToCards(const json & dataPacked)
 
 FieldPtr Board::ffactoryFields(const std::string & name)
 {
-    auto pos = name.find("Szansa (czerwona)");
-    if (pos != std::string::npos)
-    {
+    if (name == "Szansa (czerwona)")
         return redCards_;
-    } else 
-    {
-        pos = name.find("Szansa (niebieska)");
-        if (pos != std::string::npos)
-            return blueCards_;
-    }
+    else if (name == "Szansa (niebieska)")
+        return blueCards_;
+    else if (name == "Sieć wodociągów")
+        return waterSupplyNetwork_;
     return nullptr;
 }
