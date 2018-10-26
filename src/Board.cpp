@@ -4,6 +4,7 @@
 #include "Railway.hpp"
 #include "OrdinaryCard.hpp"
 #include <string>
+#include <fstream>
 
 Board::Board()
     : field_(40)
@@ -41,3 +42,14 @@ FieldPtr Board::factoryFields(const std::string & name)
     return std::make_shared<OrdinaryCard>(name);
 }
 
+json Board::readFile(const std::string & fileName)
+{
+    std::ifstream file(fileName);
+    json j;
+    if (file)
+    {
+        file >> j;
+        file.close();
+    }
+    return j;
+}

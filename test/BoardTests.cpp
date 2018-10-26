@@ -30,3 +30,9 @@ TEST_F(BoardTest, check_if_factoryFields_made_OrdynaryCard)
     std::shared_ptr<Field> ordinaryCard = board.factoryFields("Start");
     ASSERT_EQ("Start", ordinaryCard->getName());
 }
+
+TEST_F(BoardTest, check_if_method_readFile_return_json_file)
+{
+    json j = board.readFile("../files/configData.json");
+    ASSERT_EQ("Start", j["fields"]["0"]);
+}
