@@ -1,11 +1,12 @@
 #pragma once
 
-#include "Field.hpp"
+#include "Property.hpp"
 
-class Railway : public Field
+class Railway : public Property
 {
     std::string nameRailway_;
 public:
-    Railway(const std::string & nameRailway);
+    Railway(const std::string & nameRailway, int purchasePrice = 100);
+    std::string getNameRailway() const;
     void doOn(PlayerPtr player) override;
 };
