@@ -63,6 +63,8 @@ set(SRC_LIST
     src/Railway.cpp
     src/WaterSupplyNetwork.cpp
     src/WaterSupplyNetwork.hpp
+    src/City.cpp
+    src/City.hpp
 )
 
 include_directories(src)
@@ -86,6 +88,7 @@ set(TEST_SRC_LIST
     test/DiceTests.cpp
     test/RailwayTests.cpp
     test/WaterSupplyNetworkTests.cpp
+    test/CityTests.cpp
 )
 
 link_libraries(gtest)
