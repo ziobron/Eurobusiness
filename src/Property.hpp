@@ -8,7 +8,6 @@
 
 class Property : public Field
 {
-    //std::string name_;
     int purchasePrice_;
     std::shared_ptr<Player> owner_;
 public:
@@ -18,10 +17,9 @@ public:
     ~Property() = default;
     Property & operator=(const Property &) = delete;
     Property & operator=(Property &&) = delete;
-    explicit Property(const std::string & name);
+    Property(const std::string & name, int price = 700);
 
     int getPurchasePrice() const;
-    //std::string getName() const override;
     void doOn(std::shared_ptr<Player> player);
     std::shared_ptr<Player> getOwner() const;
     void setOwner(std::shared_ptr<Player> player);

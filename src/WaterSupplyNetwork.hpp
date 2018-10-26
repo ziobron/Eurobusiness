@@ -4,5 +4,5 @@
 class WaterSupplyNetwork : public Property
 {
 public:
-    WaterSupplyNetwork(const std::string & name);
+    WaterSupplyNetwork(const std::string & name, int purchasePrice);
 };

@@ -1,6 +1,6 @@
 #include "WaterSupplyNetwork.hpp"
 
-WaterSupplyNetwork::WaterSupplyNetwork(const std::string & name) :
-    Property(name)
+WaterSupplyNetwork::WaterSupplyNetwork(const std::string & name, int purchasePrice) :
+    Property(name, purchasePrice)
 {
 }

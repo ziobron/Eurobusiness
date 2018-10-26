@@ -1,9 +1,9 @@
 #include "Property.hpp"
 #include <iostream>
 
-Property::Property(const std::string & name) :
+Property::Property(const std::string & name, int price) :
     Field(name),
-    purchasePrice_(700),
+    purchasePrice_(price),
     owner_(nullptr)
 {}
 
