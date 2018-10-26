@@ -69,3 +69,24 @@ oneCard Board::getBlueCard()
 {
     return blueCards_->getOneCard(0);
 }
+
+void Board::setFieldToCards(const json & dataPacked)
+{
+    for (auto it = dataPacked["fields"].begin(); it != dataPacked["fields"].end(); it++)
+        field_.at(stoi(it.key())) = ffactoryFields(it.value());
+}
+
+FieldPtr Board::ffactoryFields(const std::string & name)
+{
+    auto pos = name.find("Szansa (czerwona)");
+    if (pos != std::string::npos)
+    {
+        return redCards_;
+    } else 
+    {
+        pos = name.find("Szansa (niebieska)");
+        if (pos != std::string::npos)
+            return blueCards_;
+    }
+    return nullptr;
+}

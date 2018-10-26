@@ -27,9 +27,11 @@ public:
 
     json readFile(const std::string & fileName);
     void setCards(json dataPacked);
+    void setFieldToCards(const json & dataFields);
     FieldPtr getField(const unsigned int numberOfField) const noexcept;
     FieldPtr factoryFields(const std::string & name);
     oneCard getRedCard();
     oneCard getBlueCard();
+    FieldPtr ffactoryFields(const std::string & name);
 };
 

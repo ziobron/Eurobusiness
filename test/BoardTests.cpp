@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "Board.hpp"
 #include "Field.hpp"
+#include <memory>
 
 struct BoardTest : public ::testing::Test
 {
@@ -43,4 +44,14 @@ TEST_F(BoardTest, check_method_setCards_if_correct_set_blue_and_red_cards)
     board.setCards(j);
     ASSERT_EQ("Zobowiązany jesteś zmodernizować swoje miasto, płacisz za każdy dom 80 $,za każdy hotel 230 $", board.getRedCard());
     ASSERT_EQ("Płacisz na budowę szpitala 400 $.", board.getBlueCard());
+}
+
+TEST_F(BoardTest, check_method_setFieldToCards_if_correct_set_pointer_Cards_to_filed)
+{
+    json j = board.readFile("../files/configData.json");
+    board.setCards(j);
+    board.setFieldToCards(j);
+    ASSERT_EQ("Zobowiązany jesteś zmodernizować swoje miasto, płacisz za każdy dom 80 $,za każdy hotel 230 $", std::dynamic_pointer_cast<Cards>(board.getField(7))->getOneCard(0));
+    ASSERT_EQ("Płacisz na budowę szpitala 400 $.", std::dynamic_pointer_cast<Cards>(board.getField(2))->getOneCard(0));
+    ASSERT_EQ(nullptr, board.getField(0));
 }
