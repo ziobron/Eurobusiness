@@ -67,6 +67,7 @@ set(SRC_LIST
     src/City.hpp
     src/State.hpp
     src/StateCity.hpp
+    src/StateCity.cpp
 )
 
 include_directories(src)

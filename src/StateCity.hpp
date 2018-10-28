@@ -4,12 +4,21 @@
 
 class StateCity : public State
 {
+public:
+    virtual int getPriceStamp() = 0;
+};
+
+class NoBuilding : public StateCity
+{
+    int getPriceStamp();
 };
 
 class OneHouse : public StateCity
 {
+    int getPriceStamp();
 };
 
-class TwoeHouses : public StateCity
+class TwoHouses : public StateCity
 {
+    int getPriceStamp();
 };
