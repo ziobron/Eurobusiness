@@ -1,4 +1,5 @@
 #include "City.hpp"
+#include "StateCity.hpp"
 
 City::City(const std::string & city, const std::string & country, int purchasePrice, int priceStampNoBuilding, int priceStampOneHouse, int priceStampTwoHouses) :
     Property(city, purchasePrice),
@@ -6,5 +7,8 @@ City::City(const std::string & city, const std::string & country, int purchasePr
     priceStampNoBuilding_(priceStampNoBuilding),
     priceStampOneHouse_(priceStampOneHouse),
     priceStampTwoHouses_(priceStampTwoHouses)
-{}
+{
+    state_ = std::make_shared<NoBuilding>();
+}
+
 

@@ -11,6 +11,7 @@ class Property : public Field
 {
     int purchasePrice_;
     std::shared_ptr<Player> owner_;
+protected:
     std::shared_ptr<State> state_;
 public:
     Property() = delete;
@@ -25,6 +26,7 @@ public:
     void doOn(std::shared_ptr<Player> player);
     std::shared_ptr<Player> getOwner() const;
     void setOwner(std::shared_ptr<Player> player);
+    int getPriceStamp() const;
 };
 
 using PropertiesPtr = std::vector<std::shared_ptr<Property>>;

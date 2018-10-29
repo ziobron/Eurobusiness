@@ -35,3 +35,8 @@ void Property::setOwner(std::shared_ptr<Player> player)
 {
     owner_ = player;
 }
+
+int Property::getPriceStamp() const
+{
+    return state_->getPriceStamp();
+}

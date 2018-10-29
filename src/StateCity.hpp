@@ -10,15 +10,18 @@ public:
 
 class NoBuilding : public StateCity
 {
+public:
     int getPriceStamp();
 };
 
 class OneHouse : public StateCity
 {
+public:
     int getPriceStamp();
 };
 
 class TwoHouses : public StateCity
 {
+public:
     int getPriceStamp();
 };
