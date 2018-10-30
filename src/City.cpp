@@ -8,7 +8,7 @@ City::City(const std::string & city, const std::string & country, int purchasePr
     priceStampOneHouse_(priceStampOneHouse),
     priceStampTwoHouses_(priceStampTwoHouses)
 {
-    state_ = std::make_shared<NoBuilding>();
+    state_ = std::make_shared<YouCanBuy>();
 }
 
 

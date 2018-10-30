@@ -1,11 +1,11 @@
 #include "Railway.hpp"
-#include "StateRailway.hpp"
+#include "StateRailwayAndWaterSN.hpp"
 
 Railway::Railway(const std::string & nameRailway, int purchasePrice) :
     Property("Railway", purchasePrice),
     nameRailway_(nameRailway)
 {
-//    state_ = std::make_shared<NoRailway>();
+    state_ = std::make_shared<YouCanBuy>();
 }
 
 void Railway::doOn(PlayerPtr player) 

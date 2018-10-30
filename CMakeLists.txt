@@ -68,7 +68,7 @@ set(SRC_LIST
     src/State.hpp
     src/StateCity.hpp
     src/StateCity.cpp
-    src/StateRailway.hpp
+    src/StateRailwayAndWaterSN.hpp
 )
 
 include_directories(src)
