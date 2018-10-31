@@ -2,25 +2,25 @@
 
 #include "State.hpp"
 
-class StateRailwayAndWaterSN : public State
+class StateWaterSNAndNuclearPP : public State
 {
 public:
     virtual int getPriceStamp() = 0; 
 };
 
-class BoughtRailway : public StateRailwayAndWaterSN
+class BoughtWaterSN : public StateWaterSNAndNuclearPP
 {
 public:
     int getPriceStamp() { return 1;}
 };
 
-class BoughtWaterSN : public StateRailwayAndWaterSN
+class BoughtNuclearPP : public StateWaterSNAndNuclearPP
 {
 public:
     int getPriceStamp() { return 1;}
 };
 
-class BoughtRailwayAndWaterSN : public StateRailwayAndWaterSN
+class BoughtWaterSNAndNuclearPP : public StateWaterSNAndNuclearPP
 {
 public:
     int getPriceStamp() { return 1;}

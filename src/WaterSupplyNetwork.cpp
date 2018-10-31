@@ -1,5 +1,5 @@
 #include "WaterSupplyNetwork.hpp"
-#include "StateRailwayAndWaterSN.hpp"
+#include "StateRailway.hpp"
 
 WaterSupplyNetwork::WaterSupplyNetwork(const std::string & name, int purchasePrice) :
     Property(name, purchasePrice)

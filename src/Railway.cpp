@@ -1,5 +1,5 @@
 #include "Railway.hpp"
-#include "StateRailwayAndWaterSN.hpp"
+#include "StateRailway.hpp"
 
 Railway::Railway(const std::string & nameRailway, int purchasePrice) :
     Property("Railway", purchasePrice),
