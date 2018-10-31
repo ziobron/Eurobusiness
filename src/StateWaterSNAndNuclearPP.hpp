@@ -17,11 +17,12 @@ public:
 class BoughtNuclearPP : public StateWaterSNAndNuclearPP
 {
 public:
-    int getPriceStamp() { return 1;}
+    int getPriceStamp() { return 2;}
 };
 
 class BoughtWaterSNAndNuclearPP : public StateWaterSNAndNuclearPP
 {
 public:
-    int getPriceStamp() { return 1;}
+    int getPriceStamp() { return 3;}
+    int getPriceStamp(StatePtr state) { return 2*state->getPriceStamp();}
 };

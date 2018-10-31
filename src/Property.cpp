@@ -19,7 +19,18 @@ int Property::getPurchasePrice() const
 
 void Property::doOn(std::shared_ptr<Player> player)
 {
-    if (player != owner_) 
+    if (owner_ == nullptr)
+    {
+        if (doYouWantBuyThisProperty())
+        {
+            owner_ = player;
+            player->reduceMoney(purchasePrice_);
+        } else 
+        {
+            PlayerPtr newOwner = whoWantBuyThisProperty();
+            newOwner->reduceMoney(purchasePrice_);
+        }
+    } else if (player != owner_) 
     {
         player->reduceMoney(12);
         owner_->addMoney(12);
@@ -39,4 +50,20 @@ void Property::setOwner(std::shared_ptr<Player> player)
 int Property::getPriceStamp() const
 {
     return state_->getPriceStamp();
+}
+
+void Property::setState(StatePtr state)
+{
+    state_ = state;
+}
+
+bool Property::doYouWantBuyThisProperty()
+{
+    std::cout << "Do you want buy this property?" << std::endl;
+    return 1;
+}
+
+PlayerPtr Property::whoWantBuyThisProperty()
+{
+       
 }
