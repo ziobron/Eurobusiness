@@ -4,12 +4,12 @@
 
 struct PlayerTests : public::testing::Test
 {
-    Player player{Color::Blue};
+    Player player{Color::BLUE};
 };
 
 TEST_F(PlayerTests, checkIfPlayerIsCreatedWithDefaultParameters)
 {
-    ASSERT_EQ(Color::Blue,player.getColor());
+    ASSERT_EQ(Color::BLUE, player.getColor());
     ASSERT_EQ(3000,player.getMoney());
     ASSERT_EQ(0,player.getLocation());
 }

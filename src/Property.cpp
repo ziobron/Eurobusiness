@@ -13,11 +13,6 @@ int Property::getPurchasePrice() const
     return purchasePrice_;
 }
 
-//std::string Property::getName() const
-//{
-//    return name_;
-//}
-
 void Property::doOn(std::shared_ptr<Player> player)
 {
     if (owner_ == nullptr)
@@ -66,5 +61,7 @@ bool Property::doYouWantBuyThisProperty()
 
 PlayerPtr Property::whoWantBuyThisProperty()
 {
-       
+    std::cout << "Action of property?" << std::endl;
+    std::cout << "Odpytaj każdego gracza czy chce kupic nieruchomosc - playerPtr->doYouWantBuyThisProperty" << std::endl;
+    //return 1;
 }

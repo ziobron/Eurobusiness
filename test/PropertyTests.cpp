@@ -24,8 +24,8 @@ TEST_F(PropertyTests, check_if_value_getPurchasePrice_is_700)
 
 TEST_F(PropertyTests, set_playerRed_as_owner_property_and_doOn_playerBlue_then_check_if_playerBlue_has_2988_money_and_palyerRed_has_3012_money)
 {
-    std::shared_ptr<Player> playerRed = std::make_shared<Player>(Color::Red);
-    std::shared_ptr<Player> playerBlue = std::make_shared<Player>(Color::Blue);
+    std::shared_ptr<Player> playerRed = std::make_shared<Player>(Color::RED);
+    std::shared_ptr<Player> playerBlue = std::make_shared<Player>(Color::BLUE);
     vienna.setOwner(playerRed);
     vienna.doOn(playerBlue);
     ASSERT_EQ(2988, playerBlue->getMoney());
@@ -34,14 +34,14 @@ TEST_F(PropertyTests, set_playerRed_as_owner_property_and_doOn_playerBlue_then_c
 
 TEST_F(PropertyTests, set_owner_on_property_and_check_if_owner_of_property_is_the_same)
 {
-    std::shared_ptr<Player> player = std::make_shared<Player>(Color::Red);
+    std::shared_ptr<Player> player = std::make_shared<Player>(Color::RED);
     vienna.setOwner(player);
     ASSERT_EQ(player, vienna.getOwner());
 }
 
 TEST_F(PropertyTests, set_owner_player_on_property_and_made_doOn_player_then_amountOfMoney_should_be_3000)
 {
-    std::shared_ptr<Player> player = std::make_shared<Player>(Color::Red);
+    std::shared_ptr<Player> player = std::make_shared<Player>(Color::RED);
     vienna.setOwner(player);
     vienna.doOn(player);
     ASSERT_EQ(3000, player->getMoney());

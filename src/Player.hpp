@@ -7,9 +7,11 @@ class Property;
 using PropertiesPtr = std::vector<std::shared_ptr<Property>>;
 
 enum class Color: unsigned char{
-    Red,
-    Green,
-    Blue
+    RED,
+    GREEN,
+    BLUE,
+    YELLOW,
+    PINK
 };
 
 class Player{
