@@ -4,7 +4,8 @@
 Property::Property(const std::string & name, int price) :
     Field(name),
     purchasePrice_(price),
-    owner_(nullptr)
+    owner_(nullptr),
+    state_(std::make_shared<YouCanBuy>())
 {}
 
 int Property::getPurchasePrice() const
@@ -32,8 +33,8 @@ void Property::doOn(std::shared_ptr<Player> player)
         }
     } else if (player != owner_) 
     {
-        player->reduceMoney(12);
-        owner_->addMoney(12);
+        player->reduceMoney(getPriceStamp());
+        owner_->addMoney(getPriceStamp());
     }
 }
 

@@ -10,5 +10,5 @@ public:
 class YouCanBuy : public State
 {
 public:
-    int getPriceStamp() { return 0;}
+    int getPriceStamp() { return 12;}
 };
