@@ -6,15 +6,12 @@
 #include <string>
 #include <fstream>
 
-Board::Board()
-    : field_(40)
-{}
-
-Board::Board(json dataPacked) :
-    Board()
+Board::Board(const std::string & fileName) :
+    field_(40)
 {
-    for (auto it = dataPacked.begin(); it != dataPacked.end(); it++)
-        field_.at(stoi(it.key())) = std::make_shared<Property>("Madryt");
+    json j = readFile(fileName);
+    setCards(j);
+    setFieldToCards(j);
 }
 
 FieldPtr Board::getField(const unsigned int numberOfField) const noexcept

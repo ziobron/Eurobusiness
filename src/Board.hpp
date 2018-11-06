@@ -21,8 +21,7 @@ private:
     std::shared_ptr<WaterSupplyNetwork> waterSupplyNetwork_;   
     std::array<PropertyPtr, 28> properties_;
 public:
-    Board();
-    Board(json dataPacked);
+    Board(const std::string & fileName = "../files/configData.json");
     ~Board() = default;
     Board(const Board&) = delete;
     Board(Board&&) = delete;
