@@ -16,6 +16,12 @@ TEST_F(PlayerTests, checkIfPlayerIsCreatedWithDefaultParameters)
 
 TEST_F(PlayerTests, setLocationTo12ShouldMoveThePlayerToField12)
 {
-    player.setLocation(12);
+    player.changeLocation(12);
     ASSERT_EQ(12,player.getLocation());
+}
+
+TEST_F(PlayerTests, setLocationTo40ShouldMoveThePlayerToField0)
+{
+    player.changeLocation(39);
+    ASSERT_EQ(0,player.getLocation());
 }

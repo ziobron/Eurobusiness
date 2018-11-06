@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include <algorithm>
+#include <iostream>
 
 Player::Player(Color c)
         : color_(c),
@@ -22,9 +23,10 @@ int Player::getLocation() const
     return location_;
 }
 
-void Player::setLocation(const int location)
+void Player::changeLocation(const int location)
 {
-    location_ = location;
+    location_ += location;
+    location_ %= 39; 
 }
 
 void Player::addProperty(const std::shared_ptr<Property> & property)
@@ -41,3 +43,12 @@ void Player::addMoney(int price)
 {
     money_ += price;
 }
+
+bool Player::doYouWantBuyThisProperty() const
+{
+    std::cout << "Do you want buy this property?" << std::endl;
+    bool answer;
+    std::cin >> answer;
+    return answer;
+}
+

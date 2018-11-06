@@ -8,6 +8,12 @@ Property::Property(const std::string & name, int price) :
     state_(std::make_shared<YouCanBuy>())
 {}
 
+Property::Property(const std::string & name, int price, VecPlayersPtr vecPlayersPtr) :
+    Property(name, price)
+{
+    vecPlayersPtr_ = vecPlayersPtr;
+}
+
 int Property::getPurchasePrice() const
 {
     return purchasePrice_;
@@ -17,14 +23,15 @@ void Property::doOn(std::shared_ptr<Player> player)
 {
     if (owner_ == nullptr)
     {
-        if (doYouWantBuyThisProperty())
+        if (player->doYouWantBuyThisProperty())
         {
             owner_ = player;
             player->reduceMoney(purchasePrice_);
         } else 
         {
-            PlayerPtr newOwner = whoWantBuyThisProperty();
-            newOwner->reduceMoney(purchasePrice_);
+          //  state_ = std::make_shared<Auction>(this);
+          //  PlayerPtr newOwner = whoWantBuyThisProperty();
+          //  newOwner->reduceMoney(purchasePrice_);
         }
     } else if (player != owner_) 
     {
@@ -53,15 +60,11 @@ void Property::setState(StatePtr state)
     state_ = state;
 }
 
-bool Property::doYouWantBuyThisProperty()
-{
-    std::cout << "Do you want buy this property?" << std::endl;
-    return 1;
-}
-
 PlayerPtr Property::whoWantBuyThisProperty()
 {
-    std::cout << "Action of property?" << std::endl;
-    std::cout << "Odpytaj każdego gracza czy chce kupic nieruchomosc - playerPtr->doYouWantBuyThisProperty" << std::endl;
-    //return 1;
+    std::cout << "Auction of property?" << std::endl;
+    for (auto player : vecPlayersPtr_)
+    {
+        if (player->doYouWantBuyThisProperty()) return player;
+    }
 }
