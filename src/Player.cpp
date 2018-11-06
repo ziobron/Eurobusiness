@@ -29,6 +29,11 @@ void Player::changeLocation(const int location)
     location_ %= 39; 
 }
 
+void Player::setLocation(const int location)
+{
+    location_ = location;
+}
+
 void Player::addProperty(const std::shared_ptr<Property> & property)
 {
     properties_.push_back(property);

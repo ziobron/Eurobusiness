@@ -37,6 +37,7 @@ public:
     void addMoney(int price);
     int getLocation() const;
     void changeLocation(const int location);
+    void setLocation(const int location);
     void addProperty(const std::shared_ptr<Property> & property);
     bool doYouWantBuyThisProperty() const;
 };

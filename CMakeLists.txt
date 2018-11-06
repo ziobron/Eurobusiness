@@ -69,6 +69,8 @@ set(SRC_LIST
     src/StateCity.hpp
     src/StateCity.cpp
     src/StateRailway.hpp
+    src/YouGoToPrison.hpp
+    src/YouGoToPrison.cpp
 )
 
 include_directories(src)
@@ -93,6 +95,7 @@ set(TEST_SRC_LIST
     test/RailwayTests.cpp
     test/WaterSupplyNetworkTests.cpp
     test/CityTests.cpp
+    test/YouGoToPrisonTests.cpp
 )
 
 link_libraries(gmock)
