@@ -15,10 +15,9 @@ using json = nlohmann::json;
 class Board
 {
 private:
-    std::vector<FieldPtr> field_;
+    std::vector<FieldPtr> fields_;
     std::shared_ptr<Cards> redCards_;   
     std::shared_ptr<Cards> blueCards_;   
-    std::shared_ptr<WaterSupplyNetwork> waterSupplyNetwork_;   
     std::array<PropertyPtr, 28> properties_;
 public:
     Board(const std::string & fileName = "../files/configData.json");

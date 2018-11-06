@@ -1,5 +1,5 @@
 #include "Board.hpp"
-#include "Property.hpp"
+#include "City.hpp"
 #include "Cards.hpp"
 #include "Railway.hpp"
 #include "OrdinaryCard.hpp"
@@ -7,7 +7,7 @@
 #include <fstream>
 
 Board::Board(const std::string & fileName) :
-    field_(40)
+    fields_(40)
 {
     json j = readFile(fileName);
     setCards(j);
@@ -16,26 +16,16 @@ Board::Board(const std::string & fileName) :
 
 FieldPtr Board::getField(const unsigned int numberOfField) const noexcept
 {
-    return field_.at(numberOfField);
+    return fields_.at(numberOfField);
 }
 
 FieldPtr Board::factoryFields(const std::string & name)
 {
     auto pos = name.find("-");
     if (pos != std::string::npos)
-        return std::make_shared<Property>(name.substr(pos + 2));
-    else 
-    {
-        pos = name.find("Szansa");
-        if (pos != std::string::npos)
-            return std::make_shared<Cards>(CardsColor::RED, name.substr(pos + 8));
-        else
-        {
-            pos = name.find("Koleje");
-            if (pos != std::string::npos)
-                return std::make_shared<Railway>(name.substr(pos + 8));
-        }
-    }
+        return std::make_shared<City>(name.substr(pos + 2), "sd");
+    else if (name.find("Koleje") != std::string::npos)
+        return std::make_shared<Railway>(name);
     return std::make_shared<OrdinaryCard>(name);
 }
 
@@ -70,7 +60,7 @@ oneCard Board::getBlueCard()
 void Board::setFieldToCards(const json & dataPacked)
 {
     for (auto it = dataPacked["fields"].begin(); it != dataPacked["fields"].end(); it++)
-        field_.at(stoi(it.key())) = ffactoryFields(it.value());
+        fields_.at(stoi(it.key())) = ffactoryFields(it.value());
 }
 
 FieldPtr Board::ffactoryFields(const std::string & name)
@@ -80,6 +70,6 @@ FieldPtr Board::ffactoryFields(const std::string & name)
     else if (name == "Szansa (niebieska)")
         return blueCards_;
     else if (name == "Sieć wodociągów")
-        return waterSupplyNetwork_;
-    return nullptr;
+        return std::make_shared<WaterSupplyNetwork>(name, 120);
+    return factoryFields(name);
 }

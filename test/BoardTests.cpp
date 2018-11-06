@@ -14,16 +14,10 @@ TEST_F(BoardTest, check_if_factoryFields_made_Property_Madrit)
     ASSERT_EQ("Madrit", madrit->getName());
 }
 
-TEST_F(BoardTest, check_if_factoryFields_made_Card_Blue)
-{
-    std::shared_ptr<Field> card = board.factoryFields("Szansa (czerwona)");
-    ASSERT_EQ("czerwona)", card->getName());
-}
-
 TEST_F(BoardTest, check_if_factoryFields_made_Railway_West)
 {
     std::shared_ptr<Field> railway = board.factoryFields("Koleje wschodnie");
-    ASSERT_EQ("Railway", railway->getName());
+    ASSERT_EQ("Koleje wschodnie", railway->getName());
 }
 
 TEST_F(BoardTest, check_if_factoryFields_made_OrdynaryCard)
@@ -53,5 +47,4 @@ TEST_F(BoardTest, check_method_setFieldToCards_if_correct_set_pointer_Cards_to_f
     board.setFieldToCards(j);
     ASSERT_EQ("Zobowiązany jesteś zmodernizować swoje miasto, płacisz za każdy dom 80 $,za każdy hotel 230 $", std::dynamic_pointer_cast<Cards>(board.getField(7))->getOneCard(0));
     ASSERT_EQ("Płacisz na budowę szpitala 400 $.", std::dynamic_pointer_cast<Cards>(board.getField(2))->getOneCard(0));
-    ASSERT_EQ(nullptr, board.getField(0));
 }
