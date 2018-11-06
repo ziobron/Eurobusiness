@@ -6,10 +6,8 @@ Dice::Dice()
     , distribuation(1,6)
 {}
 
-int Dice::throwIt() noexcept
+int Dice::throwIt()
 {
    return distribuation(generator);
 }
-
-
 

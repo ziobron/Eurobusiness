@@ -46,7 +46,7 @@ TEST_F(BoardTest, check_method_setCards_if_correct_set_blue_and_red_cards)
     ASSERT_EQ("Płacisz na budowę szpitala 400 $.", board.getBlueCard());
 }
 
-TEST_F(BoardTest, check_method_setFieldToCards_if_correct_set_pointer_Cards_to_filed)
+TEST_F(BoardTest, check_method_setFieldToCards_if_correct_set_pointer_Cards_to_field)
 {
     json j = board.readFile("../files/configData.json");
     board.setCards(j);

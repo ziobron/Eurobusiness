@@ -1,7 +1,15 @@
 #pragma once
 #include <random>
 
-class Dice
+class DiceI
+{
+public:
+    virtual ~DiceI() = default;
+    virtual int throwIt() = 0;
+};
+
+
+class Dice : public DiceI
 {
 private:
     std::random_device device;
@@ -15,6 +23,6 @@ public:
     Dice& operator=(const Dice&) = delete;
     Dice& operator=(Dice&&) = delete;
 
-    int throwIt() noexcept;
+    int throwIt();
 };
 

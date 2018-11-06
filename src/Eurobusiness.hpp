@@ -9,11 +9,11 @@ using VecPlayersPtr = std::vector<std::shared_ptr<Player>>;
 
 class Eurobusiness
 {
-    Board board_;
+    std::shared_ptr<Board> board_;
     VecPlayersPtr vecPlayersPtr_;
-    Dice dice_;
+    std::shared_ptr<DiceI> dice_;
 public:
-    Eurobusiness(int numberOfPlayers);   
+    Eurobusiness(int numberOfPlayers, std::shared_ptr<DiceI> dice = std::make_shared<Dice>());
 
     VecPlayersPtr getAllPlayers() const;
     void Play();
