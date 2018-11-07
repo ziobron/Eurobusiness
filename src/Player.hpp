@@ -42,4 +42,5 @@ public:
     void addProperty(const std::shared_ptr<Property> & property);
     bool doYouWantBuyThisProperty() const;
     void setState(StatePlayerPtr state);
+    void canLeavePrison();
 };

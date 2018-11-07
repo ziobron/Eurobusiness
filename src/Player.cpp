@@ -26,7 +26,8 @@ int Player::getLocation() const
 
 void Player::changeLocation(const int location)
 {
-    location_ += location;
+    state_->increaseNumberOfRounds();
+    location_ += state_->action(location);
     if (location_ >= 40)
     {
         money_ += 400;
@@ -67,5 +68,11 @@ bool Player::doYouWantBuyThisProperty() const
 void Player::setState(StatePlayerPtr state)
 {
     state_ = state;
+}
+
+void Player::canLeavePrison()
+{
+    if (state_->canPlayerLeavePrison()) 
+        state_ = std::make_shared<Free>();
 }
 
