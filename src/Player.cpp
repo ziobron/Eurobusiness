@@ -26,7 +26,11 @@ int Player::getLocation() const
 void Player::changeLocation(const int location)
 {
     location_ += location;
-    location_ %= 39; 
+    if (location_ >= 40)
+    {
+        money_ += 400;
+        location_ %= 40;
+    }
 }
 
 void Player::setLocation(const int location)
