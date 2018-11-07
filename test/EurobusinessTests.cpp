@@ -26,7 +26,7 @@ TEST_F(EurobusinessTests, created_eurobusiness_with_4_players_then_check_if_1_pl
     ASSERT_EQ(Color::RED, (euro.getAllPlayers()).at(0)->getColor() );
 }
 
-TEST_F(EurobusinessTests, Mock)
+/*TEST_F(EurobusinessTests, Mock)
 {
     std::shared_ptr<DiceMock> mock = std::make_shared<DiceMock>();
     Eurobusiness euro(2, mock);
@@ -39,4 +39,4 @@ TEST_F(EurobusinessTests, Mock)
     euro.Play();
     ASSERT_EQ(3, (euro.getAllPlayers()).at(0)->getLocation() );
     ASSERT_EQ(5, (euro.getAllPlayers()).at(1)->getLocation() );
-}
+}*/

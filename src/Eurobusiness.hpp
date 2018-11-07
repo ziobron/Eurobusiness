@@ -1,7 +1,7 @@
 #pragma once
 #include "Board.hpp"
 #include "Player.hpp"
-#include "Dice.hpp"
+#include "Roll.hpp"
 #include <vector>
 #include <memory>
 
@@ -11,9 +11,9 @@ class Eurobusiness
 {
     std::shared_ptr<Board> board_;
     VecPlayersPtr vecPlayersPtr_;
-    std::shared_ptr<DiceI> dice_;
+    std::shared_ptr<Roll> roll_;
 public:
-    Eurobusiness(int numberOfPlayers, std::shared_ptr<DiceI> dice = std::make_shared<Dice>());
+    Eurobusiness(int numberOfPlayers);
 
     VecPlayersPtr getAllPlayers() const;
     void Play();
