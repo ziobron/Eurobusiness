@@ -3,11 +3,21 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include "Field.hpp"
+#include "Player.hpp"
+#include "State.hpp"
 
-class Property
+using StatePtr = std::shared_ptr<State>;
+using PlayerPtr = std::shared_ptr<Player>;
+using VecPlayersPtr = std::vector<std::shared_ptr<Player>>;
+
+class Property : public Field
 {
-    std::string name_;
     int purchasePrice_;
+    std::shared_ptr<Player> owner_;
+    VecPlayersPtr vecPlayersPtr_;
+protected:
+    StatePtr state_;
 public:
     Property() = delete;
     Property(const Property &) = delete;
@@ -15,10 +25,17 @@ public:
     ~Property() = default;
     Property & operator=(const Property &) = delete;
     Property & operator=(Property &&) = delete;
-    explicit Property(const std::string & name);
+
+    Property(const std::string & name, int price, VecPlayersPtr);
+    Property(const std::string & name, int price = 700);
 
     int getPurchasePrice() const;
-    std::string getName() const;
+    void doOn(PlayerPtr player);
+    PlayerPtr getOwner() const;
+    void setOwner(PlayerPtr player);
+    int getPriceStamp() const;
+    void setState(StatePtr state);
+    PlayerPtr whoWantBuyThisProperty();
 };
 
 using PropertiesPtr = std::vector<std::shared_ptr<Property>>;

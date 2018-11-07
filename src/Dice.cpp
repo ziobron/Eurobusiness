@@ -3,13 +3,11 @@
 Dice::Dice()
     : device()
     , generator(device())
-    , distribuation(1,12)
+    , distribuation(1,6)
 {}
 
-int Dice::throwIt() noexcept
+int Dice::throwIt()
 {
    return distribuation(generator);
 }
-
-
 

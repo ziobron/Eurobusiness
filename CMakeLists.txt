@@ -51,13 +51,35 @@ set(SRC_LIST
     src/Player.cpp
     src/Property.cpp
     src/Property.hpp
+    src/Cards.cpp
+    src/Cards.hpp
     src/Dice.hpp
-    src/Dice.cpp  
+    src/Dice.cpp
+    src/Field.hpp
+    src/Field.cpp
+    src/OrdinaryCard.hpp
+    src/OrdinaryCard.cpp
+    src/Railway.hpp
+    src/Railway.cpp
+    src/WaterSupplyNetwork.cpp
+    src/WaterSupplyNetwork.hpp
+    src/City.cpp
+    src/City.hpp
+    src/State.hpp
+    src/StateCity.hpp
+    src/StateCity.cpp
+    src/StateRailway.hpp
+    src/YouGoToPrison.hpp
+    src/YouGoToPrison.cpp
+    src/Roll.cpp
+    src/Roll.hpp
+    src/StatePlayer.hpp
 )
 
 include_directories(src)
 add_library(${PROJECT_NAME}-lib ${SRC_LIST})
 add_executable(${PROJECT_NAME} src/main.cpp)
+include_directories(json)
 
 if (UNIX)
     target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib pthread)
@@ -69,11 +91,17 @@ set(TEST_SRC_LIST
     test/EurobusinessTests.cpp
     test/PlayerTests.cpp
     test/PropertyTests.cpp
+    test/CardsTests.cpp
     test/test_main.cpp
     test/BoardTests.cpp
     test/DiceTests.cpp
+    test/RailwayTests.cpp
+    test/WaterSupplyNetworkTests.cpp
+    test/CityTests.cpp
+    test/YouGoToPrisonTests.cpp
+    test/RollTests.cpp
 )
 
-link_libraries(gtest)
+link_libraries(gmock)
 add_executable(${PROJECT_NAME}-ut ${TEST_SRC_LIST})
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)
