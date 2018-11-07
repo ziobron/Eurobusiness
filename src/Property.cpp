@@ -35,8 +35,7 @@ void Property::doOn(std::shared_ptr<Player> player)
         }
     } else if (player != owner_) 
     {
-        player->reduceMoney(getPriceStamp());
-        owner_->addMoney(getPriceStamp());
+        player->reduceMoney(owner_->addMoney(getPriceStamp()));
     }
 }
 

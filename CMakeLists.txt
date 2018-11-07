@@ -73,6 +73,7 @@ set(SRC_LIST
     src/YouGoToPrison.cpp
     src/Roll.cpp
     src/Roll.hpp
+    src/StatePlayer.hpp
 )
 
 include_directories(src)

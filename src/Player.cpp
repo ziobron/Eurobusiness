@@ -5,7 +5,8 @@
 Player::Player(Color c)
         : color_(c),
         money_(3000),
-        location_(0)
+        location_(0),
+        state_(std::make_shared<Free>())
 {}
 
 Color Player::getColor() const
@@ -48,9 +49,11 @@ void Player::reduceMoney(int price)
     money_ -= price;
 }
 
-void Player::addMoney(int price)
+int Player::addMoney(int price)
 {
-    money_ += price;
+    int priceToReduce = state_->action(price);
+    money_ += priceToReduce;
+    return priceToReduce;
 }
 
 bool Player::doYouWantBuyThisProperty() const
@@ -59,5 +62,10 @@ bool Player::doYouWantBuyThisProperty() const
     bool answer;
     std::cin >> answer;
     return answer;
+}
+
+void Player::setState(StatePlayerPtr state)
+{
+    state_ = state;
 }
 
